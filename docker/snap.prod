@@ -1,0 +1,6 @@
+FROM haskell:8.4.3
+
+COPY app /app/
+RUN cd /app && stack build
+
+WORKDIR /app
