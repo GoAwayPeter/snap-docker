@@ -4,3 +4,5 @@ COPY app /app/
 RUN cd /app && stack build
 
 WORKDIR /app
+
+ENTRYPOINT ["stack","exec","app"]

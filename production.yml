@@ -4,10 +4,8 @@ services:
     build:
       context: .
       dockerfile: docker/snap.prod
-    command: stack exec app -p 80 
-    working_dir: /app
     ports:
-      - 80:80
+      - 8000:8000
     links:
       - db
   db:
@@ -17,4 +15,3 @@ services:
 
 volumes:
   pgdata:
-  .cabal:

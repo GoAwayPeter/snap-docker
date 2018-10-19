@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snap-deploy
+  labels:
+    app: snap-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snap-deploy
+  template:
+    metadata:
+      labels:
+        app: snap-deploy
+    spec:
+      containers:
+      - name: snap-deploy
+        image: gcr.io/clean-feat-219119/snap-deploy:latest
+        ports:
+        - containerPort: 8000
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: snap-deploy
+spec:
+  selector:
+    app: snap-deploy
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
