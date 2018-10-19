@@ -10,6 +10,10 @@ Category:            Web
 Build-type:          Simple
 Cabal-version:       >=1.2
 
+flag development
+  description: Whether to build the server in development (interpreted) mode
+  default: False
+
 Executable app
   hs-source-dirs: src
   main-is: Main.hs

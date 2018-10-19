@@ -11,7 +11,7 @@ main = quickHttpServe site
 
 site :: Snap ()
 site =
-    ifTop (writeBS "hello world") <|>
+    ifTop (writeBS "DON'T PANIC") <|>
     route [ ("foo", writeBS "bar")
           , ("echo/:echoparam", echoHandler)
           ] <|>
