@@ -1,8 +1,9 @@
-FROM haskell:8.4.3
-
-COPY app /app/
-RUN cd /app && stack build
+FROM haskell:8.2.2
 
 WORKDIR /app
+COPY app /app/
+RUN cabal update 
+RUN cabal install random
+RUN stack build
 
 ENTRYPOINT ["stack","exec","app"]
