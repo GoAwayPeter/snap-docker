@@ -2,4 +2,8 @@ FROM haskell:8.2.2
 
 WORKDIR /app
 
-ENTRYPOINT ["bash", "-c", "ghc-pkg check && stack build --flag app:development && stack exec app"]
+RUN apt-get update
+RUN apt-get install -y postgresql
+RUN apt-get install -y libpq-dev
+
+ENTRYPOINT ["bash", "-c", "stack build --flag app:development && stack exec app"]

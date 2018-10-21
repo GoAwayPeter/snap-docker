@@ -2,8 +2,10 @@ FROM haskell:8.2.2
 
 WORKDIR /app
 COPY app /app/
-RUN cabal update 
-RUN cabal install random
+RUN apt-get update
+RUN apt-get install -y postgresql
+RUN apt-get install -y libpq-dev
 RUN stack build
+
 
 ENTRYPOINT ["stack","exec","app"]

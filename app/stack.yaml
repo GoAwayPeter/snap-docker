@@ -1,9 +1,9 @@
-resolver: lts-11.18
+resolver: lts-11.20
 extra-deps:
-  - snap-loader-static-1.0.0.0
   - snap-loader-dynamic-1.0.0.0
-  - directory-1.2.7.1 
-  - time-1.7.0.1  
+  - snap-loader-static-1.0.0.0
+  - snaplet-persistent-0.6.0
 flags: {}
 extra-package-dbs: []
 allow-different-user: true
+allow-newer: true
