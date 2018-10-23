@@ -1,11 +1,16 @@
-FROM haskell:8.2.2
+FROM debian:stretch-slim 
+
+COPY app/.stack-work/install/x86_64-linux/lts-11.20/8.2.2/bin/app /usr/local/bin
+
+RUN apt-get update
+RUN mkdir -p /usr/share/man/man1
+RUN mkdir -p /usr/share/man/man7
+RUN apt-get install -y postgresql-client-9.6
+RUN apt-get install -y libpq-dev
 
 WORKDIR /app
-COPY app /app/
-RUN apt-get update
-RUN apt-get install -y postgresql
-RUN apt-get install -y libpq-dev
-RUN stack build
+COPY app/log /app/log
+COPY app/snaplets /app/snaplets
+COPY app/static /app/static
 
-
-ENTRYPOINT ["stack","exec","app"]
+ENTRYPOINT ["app"]

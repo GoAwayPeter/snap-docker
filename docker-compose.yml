@@ -1,9 +1,10 @@
 version: '3'
 services:
-  snapapp:
+  snapapp-toolchain:
     build:
       context: .
       dockerfile: docker/snap.dev
+    command: bash -c "stack build --flag app:development && stack exec app"
     ports:
       - 8000:8000
     volumes:

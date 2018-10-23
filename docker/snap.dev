@@ -6,4 +6,4 @@ RUN apt-get update
 RUN apt-get install -y postgresql
 RUN apt-get install -y libpq-dev
 
-ENTRYPOINT ["bash", "-c", "stack build --flag app:development && stack exec app"]
+CMD ["stack","build"]
