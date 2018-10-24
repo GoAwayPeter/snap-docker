@@ -1,6 +1,6 @@
 FROM debian:stretch-slim 
 
-COPY app/.stack-work/install/x86_64-linux/lts-11.20/8.2.2/bin/app /usr/local/bin
+COPY app/app.prod /usr/local/bin
 
 RUN apt-get update
 RUN mkdir -p /usr/share/man/man1

@@ -3,3 +3,4 @@ app/log/
 app/.stack-work/
 app/site_key.txt
 app/src/*.dump-hi
+app/app.prod

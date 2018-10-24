@@ -6,4 +6,4 @@ RUN apt-get update
 RUN apt-get install -y postgresql
 RUN apt-get install -y libpq-dev
 
-CMD ["stack","build"]
+CMD ["bash", "-c", "stack build && cp .stack-work/install/x86_64-linux/lts-11.20/8.2.2/bin/app app.prod"]
