@@ -9,6 +9,7 @@ services:
       - 8000:8000
     volumes:
       - ./app:/app
+      - ./.stack:/root/.stack
     links:
       - db
   db:
