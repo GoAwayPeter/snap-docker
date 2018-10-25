@@ -9,18 +9,18 @@ PORT=8002
 .PHONY: all
 all:
 	docker build -f ${PWD}/docker/snap.dev -t ${BUILDERIMAGETAG} ${PWD}
-	docker run -it -v ${PWD}/app:/app ${BUILDERIMAGETAG} 
+	docker run -it -v ${PWD}/app:/app -v ${PWD}/.stack:/root/.stack ${BUILDERIMAGETAG} 
 	docker build -f ${PWD}/docker/snap.prod -t ${REGISTRY}/${PROJNAME}/${PRODIMAGETAG} ${PWD}
 
 # Rebuild just the production base image
 .PHONY: prod
 prod:
-	docker build -f ${PWD}/docker/snap.prod -t ${REGISTRY}/${PRODIMAGETAG} ${PWD}
+	docker build -f ${PWD}/docker/snap.prod -t ${REGISTRY}/${PROJNAME}/${PRODIMAGETAG} ${PWD}
 
 # Run the production image (if it exists)
 .PHONY: run
 run:
-	docker run -it -p ${PORT}:8000 ${REGISTRY}/${PRODIMAGETAG}
+	docker run -it -p ${PORT}:8000 ${REGISTRY}/${PROJNAME}/${PRODIMAGETAG}
 
 
 

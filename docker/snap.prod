@@ -1,7 +1,5 @@
 FROM debian:stretch-slim 
 
-COPY app/app.prod /usr/local/bin
-
 RUN apt-get update
 RUN mkdir -p /usr/share/man/man1
 RUN mkdir -p /usr/share/man/man7
@@ -9,6 +7,7 @@ RUN apt-get install -y postgresql-client-9.6
 RUN apt-get install -y libpq-dev
 
 WORKDIR /app
+COPY app/app.prod /usr/local/bin/app
 COPY app/log /app/log
 COPY app/snaplets /app/snaplets
 COPY app/static /app/static
