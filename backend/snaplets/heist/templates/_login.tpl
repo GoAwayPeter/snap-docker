@@ -1,4 +1,4 @@
-<h1>Snap App Login</h1>
+<h1>The Snappetty Appetty Login</h1>
 
 <p><loginError/></p>
 

@@ -1,6 +1,6 @@
-app/dist/
-app/log/
-app/.stack-work/
-app/site_key.txt
-app/src/*.dump-hi
-app/app.prod
+backend/dist/
+backend/log/
+backend/.stack-work/
+backend/site_key.txt
+backend/src/*.dump-hi
+backend/app.prod

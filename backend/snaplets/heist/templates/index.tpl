@@ -3,6 +3,7 @@
   <ifLoggedIn>
     <p>
       This is a simple demo page served using
+      Very simple demo page, this is.
       <a href="http://snapframework.com/docs/tutorials/heist">Heist</a>
       and the <a href="http://snapframework.com/">Snap</a> web framework.
     </p>
